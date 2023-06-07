@@ -12,10 +12,7 @@ class BarangController extends Controller
     {
         //get posts
         // $posts = Barang::latest()->paginate(5);
-        $posts = Barang::all();
-
-        //return collection of posts as a resource
-        return new BarangResource(true, 'List Barang', $posts);
+        return Barang::all();
     }
 
     public function show(string $id)
