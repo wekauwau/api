@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\BarangController;
 use App\Http\Controllers\Api\KeranjangController;
+use App\Http\Controllers\Api\PelangganController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,8 @@ Route::controller(BarangController::class)->group(function () {
 Route::controller(KeranjangController::class)->group(function () {
     Route::post('/keranjang', 'store');
     Route::get('/keranjang/{id}', 'show');
+});
+
+Route::controller(PelangganController::class)->group(function () {
+    Route::post('/pelanggan', 'show');
 });

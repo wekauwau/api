@@ -17,7 +17,8 @@ class PelangganFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => fake()->name(),
+            'username' => fake()->username(),
+            'password' => 'password',
             'alamat' => fake()->address(),
             'no_telepon' => fake()->phoneNumber(),
         ];
