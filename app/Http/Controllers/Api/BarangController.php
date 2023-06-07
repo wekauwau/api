@@ -17,4 +17,9 @@ class BarangController extends Controller
         //return collection of posts as a resource
         return new BarangResource(true, 'List Barang', $posts);
     }
+
+    public function show(string $id)
+    {
+        return Barang::where('id', $id)->get();
+    }
 }
