@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\BarangController;
+use App\Http\Controllers\Api\KeranjangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::apiResource('/barang', App\Http\Controllers\Api\BarangController::class);
-
 Route::controller(BarangController::class)->group(function () {
     Route::get('/barang', 'index');
     Route::get('/barang/{id}', 'show');
+});
+
+Route::controller(KeranjangController::class)->group(function () {
+    Route::post('/keranjang', 'store');
+    Route::get('/keranjang/{id}', 'show');
 });
